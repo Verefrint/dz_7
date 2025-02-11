@@ -15,5 +15,8 @@
     "@typechain/hardhat": "^9.1.0",
     "hardhat": "^2.22.18",
     "typechain": "^8.3.2"
+  },
+  "dependencies": {
+    "hardhat-tracer": "^3.1.0"
   }
 }

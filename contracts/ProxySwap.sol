@@ -84,16 +84,3 @@ interface IUniswapV2Router {
         uint256 deadline
     ) external returns (uint256[] memory amounts);
 }
-
-/*
-
-test swap
-
-const proxySwap = await ethers.getContractAt("ProxySwap", "DEPLOYED_CONTRACT_ADDRESS");
-const tokenIn = "0x6B175474E89094C44Da98b954EedeAC495271d0F";  // DAI
-const tokenOut = "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"; // USDC
-const amountIn = ethers.utils.parseUnits("10", 18);
-
-await proxySwap.swapTokens(tokenIn, tokenOut, amountIn, 0, "YOUR_WALLET_ADDRESS");
-
-*/

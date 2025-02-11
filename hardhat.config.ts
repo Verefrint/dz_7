@@ -4,6 +4,7 @@ import '@typechain/hardhat'
 import '@nomicfoundation/hardhat-ethers'
 import "@nomicfoundation/hardhat-toolbox"; 
 import "@typechain/hardhat";
+import "hardhat-tracer";
 
 const config: HardhatUserConfig = {
   solidity: "0.8.28",
