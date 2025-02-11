@@ -34,6 +34,10 @@ describe("test swap functions", async function() {
         console.log(finalUSDCBalance)
         
         expect(finalUSDCBalance).to.be.gt(initialUSDCBalance);
+
+        await expect(contract.connect(ethUser).swapExactInput(ethers.parseUnits("1", 3), 2600, weth.getAddress(), usdc.getAddress())).to.be.reverted
+
+        expect(await usdc.balanceOf(ethUser.getAddress())).to.be.eq(finalUSDCBalance)
     })
 
     it("should return 1000 usdc", async function() {
@@ -54,7 +58,11 @@ describe("test swap functions", async function() {
         const finalUSDCBalance = await usdc.balanceOf(ethUser.getAddress());
 
         console.log(finalUSDCBalance)
-        
+
         expect(finalUSDCBalance).to.be.eq(1000);
+
+        await expect(contract.connect(ethUser).swapExactOutput(1000, ethers.parseUnits("1", 1), weth.getAddress(), usdc.getAddress())).to.be.reverted
+        
+        expect(finalUSDCBalance).to.be.eq(finalUSDCBalance);
     })
 })
